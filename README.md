@@ -103,7 +103,15 @@ Die Applikation funktioniert korrekt und gibt Vorhersagen zurück.
 
 ### Dokumentation Deployment Azure Web App
 
-Die erste Deployment-Variante war über eine klassische Azure Web App mit:
+Vorbereitung: Login & Subscription
+Zuerst wurde die Anmeldung bei Azure über das CLI ausgeführt:
+
+--az login
+
+Die Auswahl der Subscription „Azure for Students“ (ZHAW) war erfolgreich.
+
+<img width="1200" alt="Azure CLI Login – Verbindung zur ZHAW Subscription (Azure for Students) erfolgreich" src="https://github.com/user-attachments/assets/5dcd9663-d3ee-48e6-935a-5da2654e5ef4" />
+
 
 ```bash
 az webapp create \
@@ -218,8 +226,13 @@ az container logs \
 
 <img width="1023" alt="Container Logs ACI – Gunicorn erfolgreich gestartet" src="https://github.com/user-attachments/assets/0adde5b6-0d96-45f2-969d-e2b260023edc" />
 
+Frontend-Test nach Deployment
+Die Web App war erfolgreich erreichbar unter:
+https://calvaro-onnx-image-classifier.azurewebsites.net
 
----
+Eine Beispiel-Inferenz konnte durchgeführt werden. Die hochgeladene Datei (multiplia.png) wurde korrekt klassifiziert als minivan.
+<img width="898" alt="frontend test" src="https://github.com/user-attachments/assets/b8de135a-7a7c-4724-b9ca-89ab532e836d" />
+<img width="962" alt="frontend test after deployment" src="https://github.com/user-attachments/assets/fe3d04bf-efe6-44e1-9657-c95d3f05820f" />
 
 ## Lessons Learned ✅
 
@@ -239,7 +252,4 @@ az container logs \
 
 ```
 
----
 
-Souhaites-tu maintenant la version `.md` prête à copier/coller directement dans ton dépôt GitHub ?
-```
