@@ -52,7 +52,9 @@ docker push calvaro/car-color-classifier:latest
 ```
 
 <img width="920" alt="Docker Image Push – Upload der ONNX-App car-color-classifier auf Docker Hub  " src="https://github.com/user-attachments/assets/d5e904f0-2e08-4cb1-86f0-a75c6a1c7336" />
-![dockerhub](https://github.com/user-attachments/assets/41dce7e1-242c-4d7d-b808-81dccc856247)
+
+![dockerhub](https://github.com/user-attachments/assets/2db9c573-9f97-4f73-82cf-0ef76b9704f2)
+
 
 ---
 
