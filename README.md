@@ -1,5 +1,3 @@
-
-````markdown
 # Lernjournal 2 – Container
 
 ## Docker Web-Applikation
@@ -22,7 +20,7 @@ Die Web-Applikation basiert auf einem leichtgewichtigen Python-Container mit int
 
 ### Dokumentation manuelles Deployment
 
-####  Erstellung des Dockerfiles
+#### 🛠️ Erstellung des Dockerfiles
 
 Ein eigenes `Dockerfile` wurde entwickelt, das:
 
@@ -31,15 +29,17 @@ Ein eigenes `Dockerfile` wurde entwickelt, das:
 - ONNX-Dateien (`EfficientNet-Lite4`) und Mapping-Dateien (`labels_map.txt`) in das Image kopiert
 - über `flask run` die Anwendung in einem einfachen Webserver startet
 
+<img width="1021" alt="Docker Build mit vollständigem Abhängigkeits-Download – ONNX-App ohne Cache erstellt" src="https://github.com/user-attachments/assets/4e7c7520-8fcf-478e-95af-aa8d6a236c7d" />
 
 ---
 
-#### Build & Push des Containers
+####  Build & Push des Containers
 
 Der Container wurde lokal mit folgendem Befehl gebaut:
 
 ```bash
 docker build -t calvaro/car-color-classifier:latest .
+
 ````
 <img width="1216" alt="Kompletter Docker Build   mehrfacher Containertest der Bildklassifikations-App  " src="https://github.com/user-attachments/assets/567fd413-bb94-44b7-970a-731953c477cf" />
 
@@ -52,6 +52,7 @@ docker push calvaro/car-color-classifier:latest
 ```
 
 <img width="920" alt="Docker Image Push – Upload der ONNX-App car-color-classifier auf Docker Hub  " src="https://github.com/user-attachments/assets/d5e904f0-2e08-4cb1-86f0-a75c6a1c7336" />
+![dockerhub](https://github.com/user-attachments/assets/41dce7e1-242c-4d7d-b808-81dccc856247)
 
 ---
 
