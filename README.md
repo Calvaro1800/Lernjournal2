@@ -14,13 +14,13 @@ Die Web-Applikation basiert auf einem leichtgewichtigen Python-Container mit int
 | **Image 1 URL**   | [python:3.13.0-slim auf Docker Hub](https://hub.docker.com/_/python)                                  |
 | **Image 2**       | `calvaro/car-color-classifier:latest` – Eigenes Image inkl. Flask-App und ONNX-Inferenz              |
 | **Image 2 URL**   | [calvaro/car-color-classifier auf Docker Hub](https://hub.docker.com/r/calvaro/car-color-classifier) |
-| **Docker Compose**| *Nicht verwendet*, da ein einzelner Container ausreichte. Quelle des Codes: [GitHub Fork](https://github.com/Calvaro1800/onnx-image-classification) |
+| **Docker Compose**| https://hub.docker.com/repository/docker/calvaro/car-color-classifier/general
 
 ---
 
 ### Dokumentation manuelles Deployment
 
-#### 🛠️ Erstellung des Dockerfiles
+#### 🛠 Erstellung des Dockerfiles
 
 Ein eigenes `Dockerfile` wurde entwickelt, das:
 
@@ -146,6 +146,19 @@ az webapp log tail --name calvaro-onnx-image-classifier --resource-group mdm-lj2
 az group create --name mdm-aca-rg --location westeurope
 ```
 
+Deployment der Web App
+Die eigentliche Web App calvaro-onnx-image-classifier wurde erstellt und mit dem Container aus DockerHub verknüpft:
+
+
+az webapp create \
+  --resource-group mdm-lj2-rg \
+  --plan mdm-lj2-plan \
+  --name calvaro-onnx-image-classifier \
+  --deployment-container-image-name calvaro/car-color-classifier:latest
+<img width="1202" alt="Azure App Service Plan – Erstellung eines Linux-Free-Plans (mdm-lj2-plan)" src="https://github.com/user-attachments/assets/b18085c4-8fa4-4d25-9d38-e9b90b3c6f85" />
+
+![calvaro onnx app services](https://github.com/user-attachments/assets/b69e85c0-748b-470e-9a4e-46d8dda74969)
+
 
 
 #### Erstellung eines ACA-Environments
@@ -236,7 +249,7 @@ Eine Beispiel-Inferenz konnte durchgeführt werden. Die hochgeladene Datei (mult
 <img width="898" alt="frontend test" src="https://github.com/user-attachments/assets/b8de135a-7a7c-4724-b9ca-89ab532e836d" />
 <img width="962" alt="frontend test after deployment" src="https://github.com/user-attachments/assets/fe3d04bf-efe6-44e1-9657-c95d3f05820f" />
 
-## Lessons Learned ✅
+## Lessons Learned 
 
 * **Docker-Grundlagen** wie `build`, `tag`, `push`, `run` vollständig verstanden und getestet
 * **Gunicorn & Flask-Konfiguration** im Container gelernt
@@ -251,7 +264,5 @@ Eine Beispiel-Inferenz konnte durchgeführt werden. Die hochgeladene Datei (mult
 ---
 
 *Erstellt von Christopher Alvaro – FS2025 ZHAW MDM – Portfolio Containerisierung*
-
-```
 
 
